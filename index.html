@@ -4,10 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            color: #333;
+        }
+        embed {
+            width: 100%;
+            height: 700px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
 </head>
-<body style="text-align: center; font-family: Arial, sans-serif;">
-    <h1>My Resume</h1>
-    <embed src="Heishigan_Pathmaraj_Resume_24_03_2025.pdf" type="application/pdf" width="80%" height="600px">
-    <p>If the PDF does not load, <a href="Heishigan_Pathmaraj_Resume_24_03_2025.pdf" target="_blank">click here to download it</a>.</p>
+<body>
+    <div class="container">
+        <h1>My Resume</h1>
+        <embed src="resume.pdf" type="application/pdf">
+        <p>If the PDF does not load, <a href="resume.pdf" target="_blank">click here to download it</a>.</p>
+    </div>
 </body>
 </html>
