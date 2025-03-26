@@ -4,42 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Professional Resume of Heishigan Pathmaraj">
-    <meta name="keywords" content="resume, CV, Heishigan Pathmaraj, professional">
-    <title>Heishigan Pathmaraj | Professional Resume</title>
+    <title>Heishigan Pathmaraj - Professional Resume</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
             --accent-color: #e74c3c;
             --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
             --text-color: #333;
             --text-light: #7f8c8d;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            background: #f9f9f9;
             color: var(--text-color);
             line-height: 1.6;
         }
         
         .container {
             max-width: 1000px;
-            margin: 40px auto;
+            margin: 30px auto;
             background: white;
             padding: 40px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
         
         header {
@@ -62,17 +57,19 @@
             font-weight: 300;
         }
         
-        .resume-viewer {
-            margin: 30px 0;
+        .pdf-viewer {
+            width: 100%;
+            height: 0;
+            padding-bottom: 141.42%; /* A4 aspect ratio */
             position: relative;
             overflow: hidden;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            margin: 30px 0;
+            background: #f0f0f0;
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background: #f5f5f5;
         }
         
-        .resume-viewer embed {
+        .pdf-viewer iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -81,13 +78,19 @@
             border: none;
         }
         
-        .download-section {
+        .mobile-fallback {
+            display: none;
             text-align: center;
-            margin-top: 20px;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            margin: 20px 0;
         }
         
         .download-btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background-color: var(--secondary-color);
             color: white;
             padding: 12px 24px;
@@ -96,16 +99,13 @@
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            gap: 8px;
         }
         
         .download-btn:hover {
             background-color: #2980b9;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
-        
-        .download-btn i {
-            margin-right: 8px;
         }
         
         .contact-info {
@@ -127,6 +127,16 @@
             color: var(--secondary-color);
         }
         
+        .contact-item a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-item a:hover {
+            color: var(--secondary-color);
+        }
+        
         footer {
             text-align: center;
             margin-top: 40px;
@@ -138,12 +148,20 @@
         
         @media (max-width: 768px) {
             .container {
-                margin: 20px auto;
                 padding: 20px;
+                margin: 15px auto;
             }
             
             h1 {
                 font-size: 2rem;
+            }
+            
+            .pdf-viewer {
+                display: none;
+            }
+            
+            .mobile-fallback {
+                display: block;
             }
             
             .contact-info {
@@ -153,7 +171,6 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -162,13 +179,22 @@
             <p class="subtitle">Resume</p>
         </header>
         
-        <div class="resume-viewer">
-            <embed src="Heishigan_Pathmaraj_Resume_24_03_2025.pdf" type="application/pdf">
+        <div class="pdf-viewer">
+            <!-- Triple fallback system -->
+            <iframe id="pdf-iframe" src="https://docs.google.com/gview?url=https://yourwebsite.com/Heishigan_Pathmaraj_Resume_24_03_2025.pdf&embedded=true" frameborder="0"></iframe>
         </div>
         
-        <div class="download-section">
+        <div class="mobile-fallback">
+            <h3>Mobile Viewing Recommendation</h3>
+            <p>For optimal viewing on mobile devices, we recommend downloading the PDF version of my resume.</p>
             <a href="Heishigan_Pathmaraj_Resume_24_03_2025.pdf" class="download-btn" download>
-                <i class="fas fa-download"></i> Download Resume (PDF)
+                <i class="fas fa-download"></i> Download Resume
+            </a>
+        </div>
+        
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="Heishigan_Pathmaraj_Resume_24_03_2025.pdf" class="download-btn" download>
+                <i class="fas fa-download"></i> Download PDF Version
             </a>
         </div>
         
@@ -187,7 +213,7 @@
             </div>
             <div class="contact-item">
                 <i class="fab fa-linkedin"></i>
-                <a href="https://www.linkedin.com/in/heishigan/ target="_blank">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/heishigan">LinkedIn</a>
             </div>
         </div>
         
@@ -196,15 +222,47 @@
             <p>Last updated: March 24, 2025</p>
         </footer>
     </div>
-    
+        
     <script>
-        // Set current year in footer
+        // Set current year
         document.getElementById('current-year').textContent = new Date().getFullYear();
         
-        // Add PDF loading error handling
-        document.querySelector('embed').addEventListener('error', function() {
-            alert('Failed to load the PDF. Please use the download link instead.');
-        });
+        // Enhanced mobile detection with fallbacks
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+        
+        // Handle PDF viewing based on device
+        function setupPDFViewer() {
+            const pdfViewer = document.querySelector('.pdf-viewer');
+            const mobileFallback = document.querySelector('.mobile-fallback');
+            
+            if (isMobile()) {
+                pdfViewer.style.display = 'none';
+                mobileFallback.style.display = 'block';
+                
+                // Additional mobile-specific handling
+                console.log('Mobile device detected - showing download fallback');
+            } else {
+                // Desktop handling
+                const iframe = document.getElementById('pdf-iframe');
+                
+                // Fallback if Google Docs viewer fails
+                iframe.addEventListener('error', function() {
+                    console.log('Google Docs viewer failed, trying direct PDF');
+                    iframe.src = 'Heishigan_Pathmaraj_Resume_24_03_2025.pdf';
+                    
+                    iframe.addEventListener('error', function() {
+                        console.log('Direct PDF failed, showing download prompt');
+                        pdfViewer.style.display = 'none';
+                        mobileFallback.style.display = 'block';
+                    });
+                });
+            }
+        }
+        
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', setupPDFViewer);
     </script>
 </body>
 </html>
